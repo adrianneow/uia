@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UIAirlinesModelStoreContainer" CdmEntityContainer="UIAirlinesEntities">
+    <EntitySetMapping Name="Bookings">
+      <EntityTypeMapping TypeName="UIAirlinesModel.Booking">
+        <MappingFragment StoreEntitySet="Booking">
+          <ScalarProperty Name="Booking_id" ColumnName="Booking_id" />
+          <ScalarProperty Name="Flight_id" ColumnName="Flight_id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="SeatNum" ColumnName="SeatNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Flights">
+      <EntityTypeMapping TypeName="UIAirlinesModel.Flight">
+        <MappingFragment StoreEntitySet="Flight">
+          <ScalarProperty Name="Flight_id" ColumnName="Flight_id" />
+          <ScalarProperty Name="DepartureVenue" ColumnName="DepartureVenue" />
+          <ScalarProperty Name="DestinationVenue" ColumnName="DestinationVenue" />
+          <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+          <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+          <ScalarProperty Name="TotalSeatNum" ColumnName="TotalSeatNum" />
+          <ScalarProperty Name="SeatRemainedNum" ColumnName="SeatRemainedNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserAccounts">
+      <EntityTypeMapping TypeName="UIAirlinesModel.tblUserAccount">
+        <MappingFragment StoreEntitySet="tblUserAccount">
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

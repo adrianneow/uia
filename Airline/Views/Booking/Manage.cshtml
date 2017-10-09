@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Airline.Models.Flight>
+
+@{
+    ViewBag.Title = "Manage";
+}
+<h2>
+    Search Origin
+</h2>
+@{
+using (Html.BeginForm("Manage", "Booking", FormMethod.Get))
+{
+    <div>
+        @Html.TextBox("q")
+        <input type="submit" value="Search" id="btnSubmit" />
+    </div>
+
+
+<h2>View Flight Details</h2>
+
+<hr />
+if(ViewBag.empty != "empty")
+{ 
+<table style="width: 60%;" class="table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartureVenue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DestinationVenue)
+        </th>
+        <th>
+            @Html.DisplayName("Seats Available")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartureTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArrivalTime)
+        </th>
+
+        <th>
+            @Html.DisplayName("Book")
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartureVenue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DestinationVenue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SeatRemainedNum)
+
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartureTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArrivalTime)
+        </td>
+
+        <td>
+            @Html.ActionLink("Book Now", "Book", "Booking", new { id = item.Flight_id }, null)
+        </td>
+    </tr>
+}
+
+</table>
+}
+else
+{
+    <h2>No Result</h2>
+}
+}
+}
